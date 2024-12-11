@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="adminpassword" value="jiya"/>
+  <parameter name="password" value="admin"/>
+  <parameter name="invalidusername" value="Hari"/>
+  <parameter name="invalidpassword" value="hari123@"/>
+  <parameter name="user" value="Jiya"/>
+  <parameter name="username" value="admin"/>
+  <parameter name="adminusername" value="Jiya"/>
+  <test thread-count="5" name="SupermarketTest(failed)">
+    <classes>
+      <class name="testscript.AdminUserSearchTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="usersearch" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- testscript.AdminUserSearchTest -->
+    </classes>
+  </test> <!-- SupermarketTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
