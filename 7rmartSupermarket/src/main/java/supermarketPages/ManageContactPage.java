@@ -13,7 +13,6 @@ public class ManageContactPage {
 	public ManageContactPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 
 	@FindBy(xpath = "//p[text()='Manage Contact']")
@@ -32,15 +31,17 @@ public class ManageContactPage {
 	WebElement deliverychargelimit;
 	@FindBy(xpath = "//button[contains(@type,'submit')]")
 	WebElement updatebutton;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement alert;
 
-	//public ManageContactPage contactclick() {
-	//	contact.click();
-	//	return this;
-	//}
+	// public ManageContactPage contactclick() {
+	// contact.click();
+	// return this;
+	// }
 
 	public ManageContactPage editactionclick() {
 		WaitUtility waitutility = new WaitUtility();
-		waitutility.waitforElementToBeClickable(driver,editaction);
+		waitutility.waitforElementToBeClickable(driver, editaction);
 		editaction.click();
 		return this;
 	}
@@ -73,5 +74,10 @@ public class ManageContactPage {
 	public ManageContactPage updatebuttonclick() {
 		updatebutton.click();
 		return this;
+	}
+
+	public boolean isalertisloaded() {
+		return alert.isDisplayed();// checking assertion
+
 	}
 }

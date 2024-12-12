@@ -11,7 +11,6 @@ public class Homepage {
 	public Homepage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 
 	@FindBy(xpath = "//a[@data-toggle='dropdown']")
@@ -66,7 +65,6 @@ public class Homepage {
 	public SearchSubCategoryPage subcatclick() {
 		subcategoryclick.click();
 		return new SearchSubCategoryPage(driver);
-
 	}
 
 	public DeleteCategoryPage deleteclick() {

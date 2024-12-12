@@ -15,12 +15,11 @@ public class HomepageTest extends Base {
 
 	@Test
 	public void logout() throws IOException {
-		String username=ExcelUtility.readStringData(1, 0, "Login");
-		String password=ExcelUtility.readStringData(1, 1, "Login");
+		String username = ExcelUtility.readStringData(1, 0, "Login");
+		String password = ExcelUtility.readStringData(1, 1, "Login");
 		UserLogin login = new UserLogin(driver);
-	    login.enterUserNamePasswordField(username, password);
-		homepage=login.loginButton();
-
+		login.enterUserNamePasswordField(username, password);
+		homepage = login.loginButton();
 		homepage.admin();
 		homepage.logout();
 		Assert.assertEquals(driver.getTitle(), "Login | 7rmart supermarket", "Logout failed");

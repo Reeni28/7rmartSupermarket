@@ -22,7 +22,6 @@ public class AdminUser {
 
 	}
 
-	
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	WebElement newbutton;
 	@FindBy(xpath = "//input[@name='username']")
@@ -35,9 +34,8 @@ public class AdminUser {
 	WebElement savebutton;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement alert;
-	@FindBy(xpath="(//a[@onclick='click_button(2)'])[1]")WebElement search;
-
-	
+	@FindBy(xpath = "(//a[@onclick='click_button(2)'])[1]")
+	WebElement search;
 
 	public AdminUser newuser() {
 		newbutton.click();
@@ -47,13 +45,11 @@ public class AdminUser {
 	public AdminUser newusername(String newusernamefield) {
 		usernameinput.sendKeys(newusernamefield);
 		return this;
-
 	}
 
 	public AdminUser newpassword(String newpasswordfield) {
 		passwordinput.sendKeys(newpasswordfield);
 		return this;
-
 	}
 
 	public AdminUser dropdownlist() {
@@ -71,8 +67,8 @@ public class AdminUser {
 
 	public boolean isalertisloaded() {
 		return alert.isDisplayed();// checking assertion
-
 	}
+
 	public AdminUserSearch adminusersearch() {
 		search.click();
 		return new AdminUserSearch(driver);

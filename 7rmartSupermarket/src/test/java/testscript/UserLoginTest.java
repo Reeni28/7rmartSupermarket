@@ -35,17 +35,16 @@ public class UserLoginTest extends Base {
 		UserLogin login = new UserLogin(driver);
 		login.enterUserNamePasswordField(username, password);
 		login.loginButton();
-
 		boolean loginpageisloaded = login.isHomepageisloaded();
 		Assert.assertTrue(loginpageisloaded, Constant.ERRORMESSAGEFORVALID);
 	}
+
 	@Test
 	@Parameters({ "invalidusername", "invalidpassword" })
 	public void verifywithInvalidUsernameInvalidPassword(String invalidusername, String invalidpassword) {
 		UserLogin login = new UserLogin(driver);
 		login.enterUserNamePasswordField(invalidusername, invalidpassword);
 		login.loginButton();
-
 		boolean loginpageisloaded = login.isHomepageisloaded();
 		Assert.assertTrue(loginpageisloaded, Constant.ERRORMESSAGEFORVALID);
 	}
@@ -54,25 +53,22 @@ public class UserLoginTest extends Base {
 
 	public void verifyInvalidUserValidPassword() throws IOException {
 		UserLogin login = new UserLogin(driver);
-		login.enterUserNamePasswordField(ExcelUtility.readStringData(1, 0, "LoginTest1"), ExcelUtility.readStringData(1, 1, "LoginTest1"));
+		login.enterUserNamePasswordField(ExcelUtility.readStringData(1, 0, "LoginTest1"),
+				ExcelUtility.readStringData(1, 1, "LoginTest1"));
 		login.loginButton();
-
 		boolean loginpageisloaded = login.isHomepageisloaded();
 		Assert.assertTrue(loginpageisloaded, Constant.ERRORMESSAGEFORLOGIN);
-
 	}
 
 	@Test
 
 	public void verifyValidUserInalidPassword() throws IOException {
 		UserLogin login = new UserLogin(driver);
-		login.enterUserNamePasswordField(ExcelUtility.readStringData(1, 0, "LoginTest1"), ExcelUtility.readStringData(1, 1, "LoginTest1"));
-		
+		login.enterUserNamePasswordField(ExcelUtility.readStringData(1, 0, "LoginTest1"),
+				ExcelUtility.readStringData(1, 1, "LoginTest1"));
 		login.loginButton();
-
 		boolean loginpageisloaded = login.isHomepageisloaded();
 		Assert.assertTrue(loginpageisloaded, Constant.ERRORMESSAGEFORLOGIN);
-
 	}
 
 }

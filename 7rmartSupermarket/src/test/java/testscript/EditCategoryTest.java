@@ -2,8 +2,10 @@ package testscript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constants.Constant;
 import supermarketPages.EditCategory;
 import supermarketPages.Homepage;
 import supermarketPages.ManageCategoryPage;
@@ -12,7 +14,6 @@ import utilities.ExcelUtility;
 
 public class EditCategoryTest extends Base {
 	public Homepage homepage;
-
 	public ManageCategoryPage managecategorypage;
 	public EditCategory editcategorypage;
 
@@ -23,9 +24,11 @@ public class EditCategoryTest extends Base {
 		UserLogin login = new UserLogin(driver);
 		login.enterUserNamePasswordField(username, password);
 		homepage = login.loginButton();
-
 		managecategorypage = homepage.manageclick();
 		editcategorypage = homepage.editclick();
 		editcategorypage.choosefileclick();
+		boolean alertmsgisloaded = editcategorypage.isalertisloaded();
+		Assert.assertTrue(alertmsgisloaded, Constant.ERRORMESSAGEFORALERT);
+
 	}
 }

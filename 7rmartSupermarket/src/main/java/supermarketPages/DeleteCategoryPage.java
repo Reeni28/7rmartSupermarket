@@ -13,18 +13,28 @@ public class DeleteCategoryPage {
 		PageFactory.initElements(driver, this);
 
 	}
-@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/category/delete?del=573&page_ad=1']")WebElement deletebutton;
-@FindBy(xpath="//a[@onclick='return confirm('Do you want to delete this Category?')']")WebElement alertclick;
-public DeleteCategoryPage deleteclick()
-{
-	deletebutton.click();
-	return this;
-}
-public DeleteCategoryPage alert()
-{
-	alertclick.click();
-	driver.switchTo().alert().accept();
-	return this;
-}
+
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/category/delete?del=573&page_ad=1']")
+	WebElement deletebutton;
+	@FindBy(xpath = "//a[@onclick='return confirm('Do you want to delete this Category?')']")
+	WebElement alertclick;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement alertmessage;
+
+	public DeleteCategoryPage deleteclick() {
+		deletebutton.click();
+		return this;
+	}
+
+	public DeleteCategoryPage alert() {
+		alertclick.click();
+		driver.switchTo().alert().accept();
+		return this;
+	}
+
+	public boolean isalertisloaded() {
+		return alertmessage.isDisplayed();// checking assertion
+
+	}
 
 }

@@ -12,19 +12,16 @@ public class PageUtility {
 		select.selectByIndex(index);
 	}
 	
-	
 	public void categorySelectByVisibleText(WebElement catdropdown,String text)
 	{
 		Select select=new Select(catdropdown);
 		select.selectByVisibleText(text);
 	}
 	
-	
 	public void elementSelectByValue(WebElement dropdown,String value)
 	{
 		Select selectvalue=new Select(dropdown);
 		selectvalue.selectByValue(value);
 	}
-	
 	
 }

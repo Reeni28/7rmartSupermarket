@@ -11,7 +11,6 @@ public class UserLogin {
 	public UserLogin(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 
 	@FindBy(xpath = "//input[@name='username']")
@@ -23,11 +22,10 @@ public class UserLogin {
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/home']")
 	WebElement home;
 
-	public  UserLogin enterUserNamePasswordField(String usernamefield,String passwordfield) {
+	public UserLogin enterUserNamePasswordField(String usernamefield, String passwordfield) {
 		username.sendKeys(usernamefield);
 		password.sendKeys(passwordfield);
 		return this;
-
 	}
 
 	public Homepage loginButton() {
@@ -37,6 +35,5 @@ public class UserLogin {
 
 	public boolean isHomepageisloaded() {
 		return home.isDisplayed();// checking assertion
-
 	}
 }

@@ -13,12 +13,10 @@ public class AdminUserSearch {
 	public AdminUserSearch(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 
 	@FindBy(xpath = "(//a[@onclick='click_button(2)'])[1]")
 	WebElement search;
-
 	@FindBy(xpath = "//input[@id='un']")
 	WebElement usernamesearch;
 	@FindBy(xpath = "//select[@id='ut']")
@@ -36,7 +34,6 @@ public class AdminUserSearch {
 	public AdminUserSearch usernamesearchtext(String user) {
 		usernamesearch.sendKeys(user);
 		return this;
-
 	}
 
 	public AdminUserSearch dropdownlist() {
