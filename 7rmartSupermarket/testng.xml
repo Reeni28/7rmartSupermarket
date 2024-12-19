@@ -8,7 +8,7 @@
 <parameter name="adminusername" value="Jiya"></parameter>
 <parameter name="adminpassword" value="jiya"></parameter>
 <parameter name="user" value="Hari"></parameter>
-
+<parameter name="browzer" value="Chrome"></parameter>
   <test thread-count="5" name="SupermarketTest">
     <classes>
       <class name="testscript.AdminUserSearchTest">
