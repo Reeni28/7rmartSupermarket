@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testscript.EditCategoryTest">
+      <class name="testscript.ManageContactTest">
         <methods>
           <include name="beforeMethod"/>
+          <include name="updatemanagecontact"/>
           <include name="afterMethod"/>
-          <include name="editcategoryvalues"/>
         </methods>
-      </class> <!-- testscript.EditCategoryTest -->
+      </class> <!-- testscript.ManageContactTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

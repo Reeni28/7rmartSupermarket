@@ -3,20 +3,23 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="adminpassword" value="jiya"/>
   <parameter name="password" value="admin"/>
-  <parameter name="invalidusername" value="Hari"/>
-  <parameter name="invalidpassword" value="hari123@"/>
-  <parameter name="user" value="Jiya"/>
   <parameter name="username" value="admin"/>
   <parameter name="adminusername" value="Jiya"/>
-  <test thread-count="5" name="SupermarketTest(failed)">
+  <listeners>
+    <listener class-name="generateReport.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="extendreport(failed)">
     <classes>
-      <class name="testscript.AdminUserSearchTest">
+      <class name="testscript.UserLoginTest">
         <methods>
+          <include name="verifyValidUserInalidPassword"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
-          <include name="usersearch" invocation-numbers="0"/>
+          <include name="verifyUserLoginWithInValidCredentials" invocation-numbers="0 1 2"/>
+          <include name="verifywithInvalidUsernameInvalidPassword"/>
+          <include name="verifyValidCredentials"/>
         </methods>
-      </class> <!-- testscript.AdminUserSearchTest -->
+      </class> <!-- testscript.UserLoginTest -->
     </classes>
-  </test> <!-- SupermarketTest(failed) -->
+  </test> <!-- extendreport(failed) -->
 </suite> <!-- Failed suite [Suite] -->

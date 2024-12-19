@@ -1,5 +1,6 @@
 package testscript;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -17,7 +18,7 @@ public class ManageContactTest extends Base {
 	public ManageContactPage managecontactpage;
 
 	@Test
-	public void updatemanagecontact() throws IOException {
+	public void updatemanagecontact() throws IOException, AWTException {
 
 		String username = ExcelUtility.readStringData(1, 0, "Login");
 		String password = ExcelUtility.readStringData(1, 1, "Login");
@@ -25,12 +26,13 @@ public class ManageContactTest extends Base {
 		login.enterUserNamePasswordField(username, password);
 		homepage = login.loginButton();
 		managecontactpage = homepage.contactclick();
-		String phonenumber = ExcelUtility.readStringData(0, 0, "ContactDetails");
+		managecontactpage.editactionclick();
+		String phonenumber = ExcelUtility.readIntegerCellValue(0, 0, "ContactDetails");
 		String emailaddress = ExcelUtility.readStringData(1, 0, "ContactDetails");
 		String addressdetails = ExcelUtility.readStringData(2, 0, "ContactDetails");
 		String deliverytimevalue = ExcelUtility.readStringData(3, 0, "ContactDetails");
-		String deliverycharge = ExcelUtility.readStringData(4, 0, "ContactDetails");
-		managecontactpage.editactionclick().inputphonenumber(phonenumber).inputemailaddress(emailaddress)
+		String deliverycharge = ExcelUtility.readIntegerCellValue(4, 0, "ContactDetails");
+		managecontactpage.inputphonenumber(phonenumber).inputemailaddress(emailaddress)
 				.inputaddress(addressdetails).inputdeliverytime(deliverytimevalue).inputdeliverycharge(deliverycharge)
 				.updatebuttonclick();
 		boolean alertmsgisloaded = managecontactpage.isalertisloaded();

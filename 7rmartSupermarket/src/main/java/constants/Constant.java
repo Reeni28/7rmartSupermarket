@@ -11,5 +11,6 @@ public class Constant {
 	// images
 	public static final String SUBCATIMG = System.getProperty("user.dir") + "\\src\\main\\resources\\cake.jpg";
 	public static final String CATEGORYIMG = System.getProperty("user.dir") + "\\src\\main\\resources\\raspberries.jpg";
-
+	//url
+	public static final String CONFIGFILE=System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
 }

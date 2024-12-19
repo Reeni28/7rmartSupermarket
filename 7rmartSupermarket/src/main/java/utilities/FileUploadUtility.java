@@ -42,4 +42,20 @@ public class FileUploadUtility {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);	
 	}
+	
+	public void cleartextbox(WebElement contactclear,String value) throws AWTException
+	{
+	  
+		Robot robot	=new Robot();
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+			
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_CLEAR);
+			
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_CLEAR);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);	
+	}
 }

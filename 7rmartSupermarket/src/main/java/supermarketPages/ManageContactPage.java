@@ -1,10 +1,14 @@
 package supermarketPages;
 
+import java.awt.AWTException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import constants.Constant;
+import utilities.FileUploadUtility;
 import utilities.WaitUtility;
 
 public class ManageContactPage {
@@ -46,8 +50,11 @@ public class ManageContactPage {
 		return this;
 	}
 
-	public ManageContactPage inputphonenumber(String phonenumber) {
-		phone.sendKeys(phonenumber);
+	public ManageContactPage inputphonenumber(String phonenumber) throws AWTException {
+		FileUploadUtility fileupload = new FileUploadUtility();
+		//fileupload.cleartextbox(phonenumber);
+		fileupload.cleartextbox(phone,phonenumber);
+		
 		return this;
 	}
 
