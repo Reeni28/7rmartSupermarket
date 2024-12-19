@@ -49,7 +49,7 @@ public class UserLoginTest extends Base {
 		Assert.assertTrue(loginpageisloaded, Constant.ERRORMESSAGEFORVALID);
 	}
 
-	@Test
+	@Test(groups = {"regression"})
 
 	public void verifyInvalidUserValidPassword() throws IOException {
 		UserLogin login = new UserLogin(driver);
@@ -60,7 +60,7 @@ public class UserLoginTest extends Base {
 		Assert.assertTrue(loginpageisloaded, Constant.ERRORMESSAGEFORLOGIN);
 	}
 
-	@Test
+	@Test(groups = {"regression"})
 
 	public void verifyValidUserInalidPassword() throws IOException {
 		UserLogin login = new UserLogin(driver);
