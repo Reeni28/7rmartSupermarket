@@ -19,7 +19,6 @@ public class AdminUser {
 	public AdminUser(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")

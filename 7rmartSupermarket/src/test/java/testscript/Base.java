@@ -25,8 +25,9 @@ import org.testng.annotations.AfterMethod;
 
 public class Base {
 	public WebDriver driver;
-    public Properties properties;
-    public FileInputStream fis;
+	public Properties properties;
+	public FileInputStream fis;
+
 	@BeforeMethod(alwaysRun = true)
 	@Parameters("browzer")
 	public void beforeMethod(String browzer) throws Exception {
@@ -47,8 +48,8 @@ public class Base {
 		} else {
 			throw new Exception("invalid browser");
 		}
-		//driver = new ChromeDriver();
-		//driver.get("https://groceryapp.uniqassosiates.com/admin/login);
+		// driver = new ChromeDriver();
+		// driver.get("https://groceryapp.uniqassosiates.com/admin/login);
 		driver.get(properties.getProperty("url"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));// implicit wait
@@ -66,4 +67,3 @@ public class Base {
 		}
 	}
 }
-

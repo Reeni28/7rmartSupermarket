@@ -11,7 +11,7 @@
 <parameter name="browzer" value="Chrome"></parameter>
   <test thread-count="5" name="SupermarketTest">
     <classes>
-      <class name="testscript.AdminUserSearchTest">
+      <class name="testscript.AdminUserTest">
       
       </class>
     </classes>

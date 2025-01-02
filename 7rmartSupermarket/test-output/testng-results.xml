@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="5" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-19T14:30:16 IST" name="Suite" finished-at="2024-12-19T14:30:25 IST" duration-ms="9338">
+  <suite started-at="2024-12-20T14:32:33 IST" name="Suite" finished-at="2024-12-20T14:32:40 IST" duration-ms="7651">
     <groups>
-      <group name="regression">
-        <method signature="UserLoginTest.verifyInvalidUserValidPassword()[pri:0, instance:testscript.UserLoginTest@6fdbe764]" name="verifyInvalidUserValidPassword" class="testscript.UserLoginTest"/>
-        <method signature="UserLoginTest.verifyValidUserInalidPassword()[pri:0, instance:testscript.UserLoginTest@6fdbe764]" name="verifyValidUserInalidPassword" class="testscript.UserLoginTest"/>
-      </group> <!-- regression -->
     </groups>
-    <test started-at="2024-12-19T14:30:16 IST" name="Grouping" finished-at="2024-12-19T14:30:25 IST" duration-ms="9338">
-      <class name="testscript.UserLoginTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testscript.UserLoginTest@6fdbe764]" started-at="2024-12-19T14:30:16 IST" name="beforeMethod" finished-at="2024-12-19T14:30:19 IST" duration-ms="3326" status="PASS">
+    <test started-at="2024-12-20T14:32:33 IST" name="SupermarketTest" finished-at="2024-12-20T14:32:40 IST" duration-ms="7651">
+      <class name="testscript.AdminUserTest">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testscript.AdminUserTest@52b1beb6]" started-at="2024-12-20T14:32:33 IST" name="beforeMethod" finished-at="2024-12-20T14:32:35 IST" duration-ms="2841" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,26 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyInvalidUserValidPassword()[pri:0, instance:testscript.UserLoginTest@6fdbe764]" started-at="2024-12-19T14:30:19 IST" name="verifyInvalidUserValidPassword" finished-at="2024-12-19T14:30:21 IST" duration-ms="2474" status="PASS">
+        <test-method signature="adminuserpage()[pri:0, instance:testscript.AdminUserTest@52b1beb6]" started-at="2024-12-20T14:32:35 IST" name="adminuserpage" finished-at="2024-12-20T14:32:40 IST" duration-ms="4485" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyInvalidUserValidPassword -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testscript.UserLoginTest@6fdbe764]" started-at="2024-12-19T14:30:21 IST" name="beforeMethod" finished-at="2024-12-19T14:30:24 IST" duration-ms="2419" status="PASS">
+        </test-method> <!-- adminuserpage -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testscript.AdminUserTest@52b1beb6]" started-at="2024-12-20T14:32:40 IST" name="afterMethod" finished-at="2024-12-20T14:32:40 IST" duration-ms="270" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Chrome]]>
+                <![CDATA[[TestResult name=adminuserpage status=SUCCESS method=AdminUserTest.adminuserpage()[pri:0, instance:testscript.AdminUserTest@52b1beb6] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyValidUserInalidPassword()[pri:0, instance:testscript.UserLoginTest@6fdbe764]" started-at="2024-12-19T14:30:24 IST" name="verifyValidUserInalidPassword" finished-at="2024-12-19T14:30:25 IST" duration-ms="1060" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyValidUserInalidPassword -->
-      </class> <!-- testscript.UserLoginTest -->
-    </test> <!-- Grouping -->
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testscript.AdminUserTest -->
+    </test> <!-- SupermarketTest -->
   </suite> <!-- Suite -->
 </testng-results>

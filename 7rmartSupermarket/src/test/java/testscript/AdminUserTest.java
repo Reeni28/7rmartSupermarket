@@ -11,22 +11,24 @@ import supermarketPages.AdminUser;
 import supermarketPages.Homepage;
 import supermarketPages.UserLogin;
 import utilities.ExcelUtility;
+import utilities.FakerUtility;
 
 public class AdminUserTest extends Base {
 	public Homepage homepage;
 	public AdminUser adminuser;
+	public FakerUtility faker = new FakerUtility();
 
-	@Test
-	@Parameters({ "adminusername", "adminpassword" })
-	public void adminuserpage(String adminusername, String adminpassword) throws IOException {
+	@Test(retryAnalyzer = retry.Retry.class)
+
+	public void adminuserpage() throws IOException {
 		String username = ExcelUtility.readStringData(1, 0, "Login");
 		String password = ExcelUtility.readStringData(1, 1, "Login");
-		// String adminusername = ExcelUtility.readStringData(1, 0, "AdminPage");
-		// String adminpassword = ExcelUtility.readStringData(1, 1, "AdminPage");
 		UserLogin login = new UserLogin(driver);
 		login.enterUserNamePasswordField(username, password);
 		homepage = login.loginButton();
 		adminuser = homepage.adminuser();
+		String adminusername = faker.getFakeFirstName();
+		String adminpassword = faker.getFakePassword();
 		adminuser.newuser().newusername(adminusername).newpassword(adminpassword).dropdownlist().save();
 
 		boolean alertmsgisloaded = adminuser.isalertisloaded();

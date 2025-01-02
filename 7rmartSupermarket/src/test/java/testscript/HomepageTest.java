@@ -23,6 +23,5 @@ public class HomepageTest extends Base {
 		homepage.admin();
 		homepage.logout();
 		Assert.assertEquals(driver.getTitle(), "Login | 7rmart supermarket", "Logout failed");
-
 	}
 }

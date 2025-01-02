@@ -49,7 +49,6 @@ public class AdminUserSearch {
 
 	public boolean isresultpageisloaded() {
 		return resultpage.isDisplayed();// checking assertion
-
 	}
 
 }
